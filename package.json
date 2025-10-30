@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "next dev",
     "dev-turbo": "next dev -p 3000 --turbopack",
-    "prebuild": "npx prisma migrate deploy --schema=umami/db/postgresql/schema.prisma",
     "build": "npm-run-all check-env build-db check-db build-tracker build-geo build-app",
     "start": "next start",
     "build-docker": "npm-run-all build-db build-tracker build-geo build-app",
@@ -49,7 +48,7 @@
     "test": "jest",
     "cypress-open": "cypress open cypress run",
     "cypress-run": "cypress run cypress run",
-    "postinstall": "prisma generate --schema=db/postgresql/schema.prisma && npx prisma migrate deploy --schema=db/postgresql/schema.prisma"
+    "postinstall": "prisma generate --schema=db/postgresql/schema.prisma"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
