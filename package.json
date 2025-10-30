@@ -48,7 +48,7 @@
     "test": "jest",
     "cypress-open": "cypress open cypress run",
     "cypress-run": "cypress run cypress run",
-    "postinstall": "prisma generate --schema=db/postgresql/schema.prisma"
+    "postinstall": "prisma generate --schema=db/postgresql/schema.prisma && npx prisma migrate deploy --schema=db/postgresql/schema.prisma"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
